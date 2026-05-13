@@ -1,5 +1,7 @@
 # Person from MQTT Wizard
 
+<img src="custom_components/person_from_mqtt_wizard/brand/icon.png" width="100" align="right" alt="Person from MQTT Wizard Icon">
+
 A custom component for Home Assistant that creates a `device_tracker` entity updated via MQTT messages containing JSON payloads with GPS coordinates. 
 This entity can be easily linked to a "Person" in Home Assistant to track their location.
 
