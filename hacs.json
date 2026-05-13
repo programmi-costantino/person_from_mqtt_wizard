@@ -1,6 +1,6 @@
 {
-  "name": "<name>",
+  "name": "person tracker from mqtt",
   "render_readme": true,
   "zip_release": true,
-  "filename": "<filename>.zip"
+  "filename": "person_tracker_from_mqtt.zip"
 }

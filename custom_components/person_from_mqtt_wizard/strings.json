@@ -1,0 +1,39 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurazione MQTT Tracker",
+        "description": "Inserisci i dettagli del broker MQTT e i parametri di tracciamento.",
+        "data": {
+          "broker": "Indirizzo Broker MQTT",
+          "port": "Porta MQTT",
+          "topic": "Topic MQTT",
+          "latitude_key": "Chiave JSON per la Latitudine",
+          "longitude_key": "Chiave JSON per la Longitudine"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi al broker MQTT",
+      "unknown": "Errore sconosciuto"
+    },
+    "abort": {
+      "already_configured": "Questo broker è già stato configurato"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Modifica MQTT Tracker",
+        "description": "Modifica le impostazioni del broker MQTT o le chiavi per il JSON.",
+        "data": {
+          "broker": "Indirizzo Broker MQTT",
+          "port": "Porta MQTT",
+          "topic": "Topic MQTT",
+          "latitude_key": "Chiave JSON per la Latitudine",
+          "longitude_key": "Chiave JSON per la Longitudine"
+        }
+      }
+    }
+  }
+}

@@ -11,7 +11,7 @@ jobs:
   release:
     name: Build ZIP and create GitHub Release
     # MODIFICATO: puntiamo al sistema autoscale
-    runs-on: arc-runner-set 
+    runs-on: "tier-mid"
     steps:
       - uses: actions/checkout@v6
 
@@ -25,8 +25,8 @@ jobs:
         run: |
           # Installiamo zip se non presente (nei container è spesso assente)
           sudo apt-get update && sudo apt-get install -y zip
-          cd custom_components/simple_pid_controller/
-          zip ../../simple_pid_controller.zip -r ./
+          cd custom_components/person_tracker_from_mqtt/
+          zip ../../person_tracker_from_mqtt.zip -r ./
 
       - name: Generate changelog
         id: changelog
@@ -48,7 +48,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: simple_pid_controller.zip
+          files: person_tracker_from_mqtt.zip
           body: |
             ## Installation via HACS
             Install or update via HACS — the new version will be offered automatically.
