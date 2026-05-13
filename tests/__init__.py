@@ -1,0 +1,1 @@
+"""Tests for the Person from MQTT Wizard integration."""
