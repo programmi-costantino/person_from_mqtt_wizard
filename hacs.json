@@ -1,0 +1,6 @@
+{
+  "name": "<name>",
+  "render_readme": true,
+  "zip_release": true,
+  "filename": "<filename>.zip"
+}

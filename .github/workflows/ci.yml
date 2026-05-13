@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: ["dev", "feature/**", "fix/**", "hotfix/**"]
+  pull_request:
+    branches: [dev, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint & pre-commit
+    runs-on: arc-runner-set
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Run pre-commit
+        run: |
+          pip install pre-commit
+          pre-commit run --all-files
+
+  test:
+    name: Test (Python 3.12)
+    runs-on: arc-runner-set
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          # Rimosso cache: pip per evitare storage inutile su GitHub
+
+      - name: Install dependencies with uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          source $HOME/.cargo/env
+          uv pip install --system -r requirements.txt
+          uv pip install --system pytest pytest-cov
+
+      - name: Run pytest
+        run: pytest --cov=custom_components --cov-report=xml -q
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: false
+          # Codecov è gratuito per repo pubbliche, ma genera traffico dati
