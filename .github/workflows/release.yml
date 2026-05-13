@@ -54,7 +54,7 @@ jobs:
             Install or update via HACS — the new version will be offered automatically.
 
             ## Manual installation
-            Download `simple_pid_controller.zip`, extract and copy `simple_pid_controller/` to your `custom_components/` directory.
+            Download `person_from_mqtt_wizard.zip`, extract and copy `person_from_mqtt_wizard/` to your `custom_components/` directory.
 
             ${{ steps.changelog.outputs.changelog }}
           generate_release_notes: false
