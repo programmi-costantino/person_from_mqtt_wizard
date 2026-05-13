@@ -1,12 +1,12 @@
 {
-    "domain": "person_tracker_from_mqtt",
-    "name": "Person Tracker from MQTT",
+    "domain": "person_from_mqtt_wizard",
+    "name": "Person from MQTT Wizard",
     "codeowners": ["@programmi-costantino"],
     "config_flow": true,
     "dependencies": ["mqtt"],
-    "documentation": "https://github.com/programmi-costantino/person_tracker_from_mqtt",
+    "documentation": "https://github.com/programmi-costantino/person_from_mqtt_wizard",
     "iot_class": "local_push",
-    "issue_tracker": "https://github.com/programmi-costantino/person_tracker_from_mqtt/issues",
+    "issue_tracker": "https://github.com/programmi-costantino/person_from_mqtt_wizard/issues",
     "requirements": ["paho-mqtt>=2.1.0"],
-    "version": "1.0.0"
+    "version": "1.0.1"
 }

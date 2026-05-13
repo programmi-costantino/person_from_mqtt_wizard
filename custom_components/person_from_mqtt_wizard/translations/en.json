@@ -1,0 +1,64 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Basic MQTT Tracker Configuration",
+        "description": "Enter the tracker name and the MQTT topic.",
+        "data": {
+          "name": "Tracker Name",
+          "topic": "MQTT Topic",
+          "is_remote_broker": "Use a remote MQTT broker"
+        }
+      },
+      "remote": {
+        "title": "Remote Broker Configuration",
+        "description": "Enter the credentials for the remote MQTT broker.",
+        "data": {
+          "broker": "MQTT Broker Address",
+          "port": "MQTT Port",
+          "username": "Username (optional)",
+          "password": "Password (optional)"
+        }
+      },
+      "keys": {
+        "title": "JSON Parameters",
+        "description": "Specify the keys to decode the incoming JSON payload.",
+        "data": {
+          "latitude_key": "JSON Key for Latitude",
+          "longitude_key": "JSON Key for Longitude"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the MQTT broker",
+      "unknown": "Unknown error"
+    },
+    "abort": {
+      "already_configured": "This broker is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit MQTT Tracker",
+        "description": "Modify the main settings.",
+        "data": {
+          "topic": "MQTT Topic",
+          "is_remote_broker": "Use a remote MQTT broker",
+          "latitude_key": "JSON Key for Latitude",
+          "longitude_key": "JSON Key for Longitude"
+        }
+      },
+      "remote": {
+        "title": "Edit Remote Broker",
+        "description": "Update the remote MQTT broker credentials.",
+        "data": {
+          "broker": "MQTT Broker Address",
+          "port": "MQTT Port",
+          "username": "Username (optional)",
+          "password": "Password (optional)"
+        }
+      }
+    }
+  }
+}
