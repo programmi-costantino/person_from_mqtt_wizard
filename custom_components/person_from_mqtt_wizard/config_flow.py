@@ -91,11 +91,10 @@ class PersonMQTTConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     @staticmethod
     @callback
     def async_get_options_flow(config_entry):
-        return PersonMQTTOptionsFlowHandler(config_entry)
+        return PersonMQTTOptionsFlowHandler()
 
 class PersonMQTTOptionsFlowHandler(config_entries.OptionsFlow):
-    def __init__(self, config_entry):
-        self.config_entry = config_entry
+    def __init__(self):
         self.options_data = {}
 
     async def async_step_init(self, user_input=None):
